@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-// import s from './Statistics.module.css';
+import s from './Statistics.module.css';
 
 function Statistics({
   arrayFeedbackOptions,
@@ -8,20 +8,20 @@ function Statistics({
   positivePercentage,
 }) {
   return (
-    <ul>
+    <ul className={s.list}>
       {arrayFeedbackOptions.map((keyState, index) => (
-        <li key={keyState}>
+        <li key={keyState} className={s.item}>
           <span>{keyState}:</span>
-          <span>{arrayFeedbackValues[index]}</span>
+          <span className={s.element}>{arrayFeedbackValues[index]}</span>
         </li>
       ))}
-      <li>
-        <span>Total:</span>
-        <span>{total}</span>
+      <li className={s.item}>
+        <span>total:</span>
+        <span className={s.element}>{total}</span>
       </li>
-      <li>
-        <span>Positive feedback:</span>
-        <span>{positivePercentage}%</span>
+      <li className={s.item}>
+        <span>positive feedback:</span>
+        <span className={s.element}>{positivePercentage}%</span>
       </li>
     </ul>
   );

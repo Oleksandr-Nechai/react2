@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
-// import s from './FeedbackOptions.module.css';
+import s from './FeedbackOptions.module.css';
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <div>
+    <div className={s.container}>
       {options.map(keyState => (
         <button
           type="button"
           key={keyState}
           onClick={() => onLeaveFeedback(keyState)}
+          className={s.button}
         >
           {keyState}
         </button>
